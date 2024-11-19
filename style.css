@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f9f4;
+    color: #333;
+    background-color: aquamarine;
+}
+
+header {
+    background-image: url('images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 80px 20px;
+    position: relative;
+}
+
+header .header-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3em;
+    animation: fadeIn 3s ease-out;
+    color: white;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    animation: fadeInUp 3s ease-out;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 40px;
+    border-radius: 10px;
+    animation: slideUp 1s ease-out;
+}
+
+.section h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    animation: fadeInUp 2s ease-out;
+    justify-content: center;
+}
+
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.05);
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #58a5b4;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: #46a0a0;
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px; /* Da el efecto de perspectiva */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Necesario para que el contenido se voltee */
+    transition: transform 0.6s; /* Tiempo de animación */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); /* Voltea la tarjeta al pasar el ratón */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde el reverso cuando se voltea */
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-back {
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transform: rotateY(180deg); /* Reversa la cara posterior para que esté oculta inicialmente */
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen a la tarjeta sin deformarla */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card-front:hover .card-image {
+    transform: scale(1.1); /* Aumenta la imagen ligeramente al pasar el ratón */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #2a5d84;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+}
+
+span:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+span:hover {
+    transform: translateY(-5px);
+}
+
+.span-content {
+    width: 50%;
+    padding: 20px;
+}
+
+.span-content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.span-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.span-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.span-content ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.span-image {
+    width: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.span-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+span:hover .section-image img {
+    transform: scale(1.05);
+}
+
+.span-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2a5d84;
+    margin-bottom: 40px;
+}
+
+.interactive-btn {
+    display: inline-block;
+    background-color: #2a5d84;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.interactive-btn:hover {
+    background-color: #1a3d5a;
+}
+
+@media (max-width: 768px) {
+    .span-content, .section-image {
+        width: 100%;
+    }
+
+    span {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .span-image img {
+        height: 300px;
+    }
+}
+
+footer {
+  background-color: #2c3e50; /* Fondo oscuro */
+  color: #ecf0f1; /* Texto claro */
+  text-align: center; /* Centrado */
+  padding: 20px 0; /* Espaciado vertical */
+  font-family: 'Arial', sans-serif; /* Fuente básica */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+footer .footer-content p {
+  margin: 5px 0; /* Espaciado entre líneas */
+  font-size: 16px; /* Tamaño estándar */
+}
+
+footer .footer-content .name {
+  font-size: 18px; /* Tamaño más grande para el nombre */
+  font-weight: bold; /* Negrita */
+  color: #3498db; /* Color azul */
+}
+
+
